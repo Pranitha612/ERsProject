@@ -1,0 +1,124 @@
+ERsProject - Run Instructions
+
+Project structure:
+- Backend: ERsProject\backend
+- Frontend: ERsProject\frontend
+
+==================================================
+1. BACKEND SETUP AND RUN
+==================================================
+
+Open Command Prompt or PowerShell and run:
+
+cd C:\Users\Ritwik\ERsProject\backend
+
+python -m venv venv
+
+venv\Scripts\activate
+
+python -m pip install --upgrade pip
+
+pip install flask flask-cors opencv-python deepface numpy tf-keras
+
+python app.py
+
+Backend will run at:
+http://127.0.0.1:5000
+
+Test backend in browser:
+http://127.0.0.1:5000/
+
+Expected response:
+{"message":"API is running"}
+
+==================================================
+2. FRONTEND SETUP AND RUN
+==================================================
+
+Open a new terminal and run:
+
+cd C:\Users\Ritwik\ERsProject\frontend
+
+npm install
+if not worked npm install react@18 react-dom@18 then npm install
+
+npm start
+
+Frontend will run at:
+http://localhost:3000
+
+==================================================
+3. HOW TO USE THE APP
+==================================================
+
+1. Start backend first.
+2. Start frontend second.
+3. Open:
+   http://localhost:3000
+4. Upload a group image.
+5. Click Analyze.
+6. View:
+   - Detected people
+   - Predicted relationships
+   - Relationship graph
+
+==================================================
+4. API DETAILS
+==================================================
+
+Endpoint:
+POST http://127.0.0.1:5000/analyze
+
+Request type:
+multipart/form-data
+
+Field name:
+image
+
+Example response:
+{
+  "people": [
+    {
+      "person_id": 1,
+      "age": 28,
+      "gender": "Woman",
+      "emotion": "happy",
+      "role": "adult",
+      "box": [100, 120, 80, 80]
+    }
+  ],
+  "relationships": [
+    {
+      "p1": 1,
+      "p2": 2,
+      "relation": "Parent–Child"
+    }
+  ]
+}
+
+==================================================
+5. IMPORTANT NOTES
+==================================================
+
+- Keep both backend and frontend terminals running.
+- If frontend says module not found, run:
+  npm install
+- If backend import fails, make sure the virtual environment is activated:
+  venv\Scripts\activate
+- If port 5000 is busy, stop the old Flask process and run:
+  python app.py
+- If port 3000 is busy, React may ask to use another port. Type:
+  Y
+
+==================================================
+6. QUICK RUN SUMMARY
+==================================================
+
+Terminal 1:
+cd C:\Users\Ritwik\ERsProject\backend
+venv\Scripts\activate
+python app.py
+
+Terminal 2:
+cd C:\Users\Ritwik\ERsProject\frontend
+npm start
