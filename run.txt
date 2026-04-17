@@ -40,7 +40,7 @@ Open a new terminal and run:
 cd C:\Users\Ritwik\ERsProject\frontend
 
 npm install
-if not worked npm install react@18 react-dom@18 then npm install
+if not worked npm install react@18 react-dom@18 then npm install react@18 react-dom@18
 
 npm start
 
