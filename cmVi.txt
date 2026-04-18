@@ -1,0 +1,7 @@
+
+RetinaFace for face detection, through DeepFace.analyze(..., detector_backend="retinaface")
+OpenCV Haar Cascade Frontal Face using haarcascade_frontalface_default.xml
+OpenCV Haar Cascade Smile using haarcascade_smile.xml
+DeepFace pretrained Age model for age estimation
+DeepFace pretrained Gender model for gender classification
+DeepFace pretrained Emotion model for emotion recognition
